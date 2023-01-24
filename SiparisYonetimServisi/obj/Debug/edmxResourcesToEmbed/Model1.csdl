@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SiparisYonetimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TABLO_FIRMA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FIRMAAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ONAYDURUM" Type="Boolean" />
+    <Property Name="IZBAS" Type="Time" Precision="7" />
+    <Property Name="IZBIT" Type="Time" Precision="7" />
+    <NavigationProperty Name="TABLO_SIPARIS" Relationship="Self.FK_TABLO_SIPARIS_TABLO_FIRMA" FromRole="TABLO_FIRMA" ToRole="TABLO_SIPARIS" />
+    <NavigationProperty Name="TABLO_URUN" Relationship="Self.FK_TABLO_URUN_TABLO_FIRMA" FromRole="TABLO_FIRMA" ToRole="TABLO_URUN" />
+  </EntityType>
+  <EntityType Name="TABLO_SIPARIS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FIRMAID" Type="Int32" />
+    <Property Name="URUNID" Type="Int32" />
+    <Property Name="MUSTERIAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MUSTERISOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SIPARISTARIH" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="TABLO_FIRMA" Relationship="Self.FK_TABLO_SIPARIS_TABLO_FIRMA" FromRole="TABLO_SIPARIS" ToRole="TABLO_FIRMA" />
+    <NavigationProperty Name="TABLO_URUN" Relationship="Self.FK_TABLO_SIPARIS_TABLO_URUN" FromRole="TABLO_SIPARIS" ToRole="TABLO_URUN" />
+  </EntityType>
+  <EntityType Name="TABLO_URUN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FIRMAID" Type="Int32" />
+    <Property Name="URUNAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STOK" Type="Int32" />
+    <Property Name="FIYAT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="TABLO_FIRMA" Relationship="Self.FK_TABLO_URUN_TABLO_FIRMA" FromRole="TABLO_URUN" ToRole="TABLO_FIRMA" />
+    <NavigationProperty Name="TABLO_SIPARIS" Relationship="Self.FK_TABLO_SIPARIS_TABLO_URUN" FromRole="TABLO_URUN" ToRole="TABLO_SIPARIS" />
+  </EntityType>
+  <Association Name="FK_TABLO_SIPARIS_TABLO_FIRMA">
+    <End Role="TABLO_FIRMA" Type="Self.TABLO_FIRMA" Multiplicity="0..1" />
+    <End Role="TABLO_SIPARIS" Type="Self.TABLO_SIPARIS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLO_FIRMA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLO_SIPARIS">
+        <PropertyRef Name="FIRMAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLO_URUN_TABLO_FIRMA">
+    <End Role="TABLO_FIRMA" Type="Self.TABLO_FIRMA" Multiplicity="0..1" />
+    <End Role="TABLO_URUN" Type="Self.TABLO_URUN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLO_FIRMA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLO_URUN">
+        <PropertyRef Name="FIRMAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLO_SIPARIS_TABLO_URUN">
+    <End Role="TABLO_URUN" Type="Self.TABLO_URUN" Multiplicity="0..1" />
+    <End Role="TABLO_SIPARIS" Type="Self.TABLO_SIPARIS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLO_URUN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLO_SIPARIS">
+        <PropertyRef Name="URUNID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SiparisYonetimEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TABLO_FIRMA" EntityType="Self.TABLO_FIRMA" />
+    <EntitySet Name="TABLO_SIPARIS" EntityType="Self.TABLO_SIPARIS" />
+    <EntitySet Name="TABLO_URUN" EntityType="Self.TABLO_URUN" />
+    <AssociationSet Name="FK_TABLO_SIPARIS_TABLO_FIRMA" Association="Self.FK_TABLO_SIPARIS_TABLO_FIRMA">
+      <End Role="TABLO_FIRMA" EntitySet="TABLO_FIRMA" />
+      <End Role="TABLO_SIPARIS" EntitySet="TABLO_SIPARIS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLO_URUN_TABLO_FIRMA" Association="Self.FK_TABLO_URUN_TABLO_FIRMA">
+      <End Role="TABLO_FIRMA" EntitySet="TABLO_FIRMA" />
+      <End Role="TABLO_URUN" EntitySet="TABLO_URUN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLO_SIPARIS_TABLO_URUN" Association="Self.FK_TABLO_SIPARIS_TABLO_URUN">
+      <End Role="TABLO_URUN" EntitySet="TABLO_URUN" />
+      <End Role="TABLO_SIPARIS" EntitySet="TABLO_SIPARIS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

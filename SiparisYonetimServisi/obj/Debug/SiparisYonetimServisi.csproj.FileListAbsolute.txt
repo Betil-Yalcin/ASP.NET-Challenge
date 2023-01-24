@@ -1,0 +1,16 @@
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\bin\Debug\SiparisYonetimServisi.exe.config
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\bin\Debug\SiparisYonetimServisi.exe
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\bin\Debug\SiparisYonetimServisi.pdb
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\bin\Debug\EntityFramework.dll
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\bin\Debug\EntityFramework.xml
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\obj\Debug\SiparisYonetimServisi.csproj.AssemblyReference.cache
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\obj\Debug\SiparisYonetimServisi.csproj.SuggestedBindingRedirects.cache
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\obj\Debug\SiparisYonetimServisi.Form1.resources
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\obj\Debug\SiparisYonetimServisi.Properties.Resources.resources
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\obj\Debug\SiparisYonetimServisi.csproj.GenerateResource.cache
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\obj\Debug\SiparisYonetimServisi.csproj.CoreCompileInputs.cache
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\obj\Debug\SiparisYonetimServisi.csproj.CopyComplete
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\obj\Debug\SiparisYonetimServisi.exe
+C:\Users\betil\source\repos\SiparisYonetimServisi\SiparisYonetimServisi\obj\Debug\SiparisYonetimServisi.pdb

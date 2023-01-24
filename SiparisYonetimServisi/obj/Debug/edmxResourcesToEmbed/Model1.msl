@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SiparisYonetimModelStoreContainer" CdmEntityContainer="SiparisYonetimEntities">
+    <EntitySetMapping Name="TABLO_FIRMA">
+      <EntityTypeMapping TypeName="SiparisYonetimModel.TABLO_FIRMA">
+        <MappingFragment StoreEntitySet="TABLO_FIRMA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FIRMAAD" ColumnName="FIRMAAD" />
+          <ScalarProperty Name="ONAYDURUM" ColumnName="ONAYDURUM" />
+          <ScalarProperty Name="IZBAS" ColumnName="IZBAS" />
+          <ScalarProperty Name="IZBIT" ColumnName="IZBIT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLO_SIPARIS">
+      <EntityTypeMapping TypeName="SiparisYonetimModel.TABLO_SIPARIS">
+        <MappingFragment StoreEntitySet="TABLO_SIPARIS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FIRMAID" ColumnName="FIRMAID" />
+          <ScalarProperty Name="URUNID" ColumnName="URUNID" />
+          <ScalarProperty Name="MUSTERIAD" ColumnName="MUSTERIAD" />
+          <ScalarProperty Name="MUSTERISOYAD" ColumnName="MUSTERISOYAD" />
+          <ScalarProperty Name="SIPARISTARIH" ColumnName="SIPARISTARIH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TABLO_URUN">
+      <EntityTypeMapping TypeName="SiparisYonetimModel.TABLO_URUN">
+        <MappingFragment StoreEntitySet="TABLO_URUN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FIRMAID" ColumnName="FIRMAID" />
+          <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
+          <ScalarProperty Name="STOK" ColumnName="STOK" />
+          <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
